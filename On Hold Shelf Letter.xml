@@ -26,193 +26,192 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
 				<xsl:call-template name="toWhomIsConcerned" /> <!-- mailReason.xsl -->
 
-
-
 					<div class="messageArea">
 				<div class="messageBody">
-<!-- AFN CODE -->
-<xsl:choose>
-	<!-- AFN test (is_afn_patron) defined in footer.xsl -->
-	<xsl:when test="(string-length($is_afn_patron) > 0)">
-		<!-- handle AFN supported languages (is_preferred_lang_fr) defined in footer.xsl-->
-		<xsl:choose>
-			<xsl:when test="(string-length($is_preferred_lang_fr) > 0)">
-				<!-- handle AFN language fr -->
-				<table cellspacing="0" cellpadding="5" border="0">
-					<tr>
-						<td>
-							Le document suivant de <xsl:value-of select="notification_data/phys_item_display/owning_library_name"/>, que vous avez demandé le <xsl:value-of select="notification_data/request/create_date"/> peut être récupéré à <b><xsl:value-of select="notification_data/request/delivery_address"/></b>
-						</td>
-					</tr>
+					<!-- AFN CODE -->
+					<xsl:choose>
+                        <!-- AFN test (is_afn_patron) defined in footer.xsl -->
+                        <xsl:when test="(string-length($is_afn_patron) > 0)">
+                            <!-- handle AFN supported languages (is_preferred_lang_fr) defined in footer.xsl-->
+                            <xsl:choose>
+                                <xsl:when test="(string-length($is_preferred_lang_fr) > 0)">
+									<!-- handle AFN language fr -->
+									<table cellspacing="0" cellpadding="5" border="0">
+										<tr>
+											<td>
+                                                <!-- AFN VERSION 1.6 changed some french text -->
+                                                Le document suivant de <xsl:value-of select="notification_data/phys_item_display/owning_library_name"/>, que vous avez demandé le <xsl:value-of select="notification_data/request/create_date"/> peut être récupéré à <b><xsl:value-of select="notification_data/request/delivery_address"/></b>												
+											</td>
+										</tr>
 
-					<xsl:if test="notification_data/request/work_flow_entity/expiration_date">
-						<tr>
-							<td>
-								<br/>
-								Le document sera conservé pour vous jusqu'au <xsl:value-of select="notification_data/request/work_flow_entity/expiration_date"/>
-							</td>
-						</tr>
-					</xsl:if>
-					<tr>
-						<td>
-							<br/>
-							<xsl:call-template name="recordTitle" /> <!-- recordTitle.xsl -->
-						</td>
-					</tr>
+										<xsl:if test="notification_data/request/work_flow_entity/expiration_date">
+											<tr>
+												<td>
+                                                    <br/>
+                                                    <!-- AFN VERSION 1.6 changed some french text -->
+													Le document sera conservé pour vous jusqu'au <xsl:value-of select="notification_data/request/work_flow_entity/expiration_date"/>
+												</td>
+											</tr>
+										</xsl:if>
+										<tr>
+											<td>
+                                                <br/>
+                                                <xsl:call-template name="recordTitle" /> <!-- recordTitle.xsl -->
+                                            </td>
+										</tr>
 
-					<!-- If notes exist, then we'll display the notes lable and the note -->
-					<xsl:if test="notification_data/request/system_notes !='' ">
-						<tr>
-							<td>
-								<br/>
-								<b>NOTES qui peuvent affecter le prêt:</b>
-							</td>
-						</tr>
+										<!-- If notes exist, then we'll display the notes lable and the note -->
+										<xsl:if test="notification_data/request/system_notes !='' ">
+											<tr>
+												<td>
+                                                    <br/>
+                                                    <b>NOTES qui peuvent affecter le prêt:</b>
+                                                </td>
+											</tr>
 
-						<tr>
-							<td><xsl:value-of select="notification_data/request/system_notes"/></td>
-						</tr>
-						<!-- AFN-VERSION 1.2 moved /xsl:if closing tag below system_notes tr -->
-					</xsl:if>	
+											<tr>
+												<td><xsl:value-of select="notification_data/request/system_notes"/></td>
+											</tr>
+                                        <!-- AFN-VERSION 1.2 moved /xsl:if closing tag below system_notes tr -->
+                                        </xsl:if>										
+                                        
+                                        <tr>
+                                            <td>
+                                                <br/>      
+                                                <!-- AFN-VERSION 1.1 -->
+                                                <!-- AFN VERSION 1.6 changed some french text -->
+                                                Pour connaitre les heures de service et des informations liées à la récupération de documents veuillez consulter ci-dessus la page web de la bibliothèque.
+                                                <br/>
+                                            </td>
+                                        </tr>
+										
+									</table>								
+								</xsl:when>	
+								<xsl:otherwise>
+									<!-- handle AFN language default english 'en' -->
+									<table cellspacing="0" cellpadding="5" border="0">
+										<tr>
+											<td>
+												The following item from <xsl:value-of select="notification_data/phys_item_display/owning_library_name"/>, which you requested on <xsl:value-of select="notification_data/request/create_date"/> can be picked up at <b><xsl:value-of select="notification_data/request/delivery_address"/></b>
+											</td>
+										</tr>
 
-					<tr>
-						<td>
-							<br/>      
-							<!-- AFN-VERSION 1.1 -->
-							Pour connaitre les heures de service et des informations liées à la récupération de documents veuillez consulter ci-dessus la page web de la bibliothèque. 
-							<br/>
-						</td>
-					</tr>					
-				</table>								
-			</xsl:when>	
-			<xsl:otherwise>
-				<!-- handle AFN language default english 'en' -->
-				<table cellspacing="0" cellpadding="5" border="0">
-					<tr>
-						<td>
-							The following item from <xsl:value-of select="notification_data/phys_item_display/owning_library_name"/>, which you requested on <xsl:value-of select="notification_data/request/create_date"/> can be picked up at <b><xsl:value-of select="notification_data/request/delivery_address"/></b>
-						</td>
-					</tr>
+										<xsl:if test="notification_data/request/work_flow_entity/expiration_date">
+                                            
+											<tr>
+												<td>
+                                                    <br/>
+													The item will be held for you until <xsl:value-of select="notification_data/request/work_flow_entity/expiration_date"/>
+												</td>
+											</tr>
+										</xsl:if>
+                                        
+										<tr>                                        
+											<td>
+                                                <br/>
+                                                <xsl:call-template name="recordTitle" /> <!-- recordTitle.xsl -->
+                                            </td>
+										</tr>
 
-					<xsl:if test="notification_data/request/work_flow_entity/expiration_date">
-						
-						<tr>
-							<td>
-								<br/>
-								The item will be held for you until <xsl:value-of select="notification_data/request/work_flow_entity/expiration_date"/>
-							</td>
-						</tr>
-					</xsl:if>
-					
-					<tr>                                        
-						<td>
-							<br/>
-							<xsl:call-template name="recordTitle" /> <!-- recordTitle.xsl -->
-						</td>
-					</tr>
+										<!-- If notes exist, then we'll display the notes lable and the note -->
+										<xsl:if test="notification_data/request/system_notes !='' ">                                            
+											<tr>
+												<td>
+                                                    <br/>    
+                                                    <b>NOTES that may affect loan:</b>
+                                                </td>
+											</tr>
 
-					<!-- If notes exist, then we'll display the notes lable and the note -->
-					<xsl:if test="notification_data/request/system_notes !='' ">                                            
-						<tr>
-							<td>
-								<br/>    
-								<b>NOTES that may affect loan:</b>
-							</td>
-						</tr>
-
-						<tr>
-							<td><xsl:value-of select="notification_data/request/system_notes"/></td>
-						</tr>
-					</xsl:if>	
-					
-					<tr>                                                                                                                                
-						<td>
-							<br/>                                                
-							Please check the website at the pickup library indicated above for service hours and pickup information.
-							<br/>
-						</td>
-					</tr>
-														
-				</table>
-			</xsl:otherwise>
-		</xsl:choose>																													
-	</xsl:when>
-	<xsl:otherwise>	
-
-<!-- Local Letters -->
-<!-- IRC HAM LETTER -->
-<xsl:choose>
-<xsl:when test="/notification_data/organization_unit/path='01OCUL.01OCUL_BU.HAMILTON'">
-<table cellspacing="0" cellpadding="5" border="0">
-<tr>
-	<td>
-<p>The following items are now ready for pickup at Instructional Resource Center, Hamilton Campus<br />
-Wearing a mask or face covering is required as per <a href="https://brocku.ca/coronavirus/faq/#1628185318475-3c71d650-68dc">Brock's campus-wide policy </a></p>
-<p>For more information visit the Instructional Resource Centre (IRC):  <a href="https://brocku.ca/education/student-resources/irc/ ">https://brocku.ca/education/student-resources/irc/</a></p>	
-</td>
-</tr>
-<tr>
-      <td>
-            <h2><a href="https://brocku.ca/education/student-resources/irc/">Please check our website for library hours.</a></h2>
-</td>
-</tr>
-</table>
-</xsl:when>
-<!-- IRC ST CATH LETTER -->
-<xsl:when test="/notification_data/organization_unit/path='01OCUL.01OCUL_BU.IRC'">
-<table cellspacing="0" cellpadding="5" border="0">
-<tr>
-	<td>
-<p>The following items are now ready for pickup at Instructional Resource Centre, St. Catharines Campus<br />
-Wearing a mask or face covering is required as per <a href="https://brocku.ca/coronavirus/faq/#1628185318475-3c71d650-68dc">Brock's campus-wide policy </a></p>
-<p>For more information visit the Instructional Resource Centre (IRC):  <a href="https://brocku.ca/education/student-resources/irc/ ">https://brocku.ca/education/student-resources/irc/</a></p>	
-</td>
-</tr>
-<tr>
-      <td>
-            <h2><a href="https://brocku.ca/education/student-resources/irc/">Please check our website for library hours.</a></h2>
-</td>
-</tr>
-</table>
-</xsl:when>
-<!-- Main Library Letter -->
-<xsl:otherwise>
-	<table cellspacing="0" cellpadding="5" border="0">
-<tr>
-       <td>
-	 <p>The following books are now ready for pickup at James A. Gibson Library <br />
-Wearing a mask or face covering is required as per <a href="https://brocku.ca/coronavirus/faq/#1628185318475-3c71d650-68dc">Brock's campus-wide policy </a></p>
-       </td>
-</tr>
-<tr>
-      <td>
-            <h2><a href="https://brocku.ca/library/use/hours/">Please check our website for library hours.</a></h2>
-</td>
-</tr>
-</table>
-</xsl:otherwise>
-</xsl:choose>
-
-<table cellspacing="2" cellpadding="5" border="2">
-<tr>
-									<th>Title</th>
-									<th>Author</th>
-
+											<tr>
+												<td><xsl:value-of select="notification_data/request/system_notes"/></td>
+											</tr>
+										</xsl:if>	
+                                        
+                                        <tr>                                                                                                                                
+                                            <td>
+                                                <br/>                                                
+                                                Please check the website at the pickup library indicated above for service hours and pickup information.
+                                                <br/>
+                                            </td>
+                                        </tr>
+                                        									
+									</table>
+								</xsl:otherwise>
+							</xsl:choose>																													
+						</xsl:when>
+						<xsl:otherwise>			
+							<!-- AFN TODO -->
+							<!-- handle local institution on hold (ie. PUT YOUR EXISTING HOLD LETTER INFO HERE between the xsl:otherwise tag)-->
+					<xsl:choose>
+						<xsl:when test="/notification_data/organization_unit/path='01OCUL.01OCUL_BU.HAMILTON'">
+							<table cellspacing="0" cellpadding="5" border="0">
+								<tr>
+									<td>
+										<p>The following items are now ready for pickup at Instructional Resource Center, Hamilton Campus<br />
+										Wearing a mask or face covering is required as per <a href="https://brocku.ca/coronavirus/faq/#1628185318475-3c71d650-68dc">Brock's campus-wide policy </a></p>
+										<p>For more information visit the Instructional Resource Centre (IRC):  <a href="https://brocku.ca/education/student-resources/irc/ ">https://brocku.ca/education/student-resources/irc/</a></p>	
+									</td>
 								</tr>
-<xsl:for-each select="notification_data/phys_item_display">
-									<tr>
-										<td><xsl:value-of select="title"/></td>
-										<td><xsl:value-of select="author"/></td>
-                                                                       </tr>
-
-</xsl:for-each>
-</table>
-							<!-- END OF AFN TODO -->
-</xsl:otherwise>
-</xsl:choose>
-
-</div>
-</div>
+								<tr>
+									<td>
+										<h2><a href="https://brocku.ca/education/student-resources/irc/">Please check our website for library hours.</a></h2>
+									</td>
+								</tr>
+							</table>
+						</xsl:when>
+						<!-- IRC ST CATH LETTER -->
+						<xsl:when test="/notification_data/organization_unit/path='01OCUL.01OCUL_BU.IRC'">
+							<table cellspacing="0" cellpadding="5" border="0">
+								<tr>
+									<td>
+										<p>The following items are now ready for pickup at Instructional Resource Centre, St. Catharines Campus<br />
+										Wearing a mask or face covering is required as per <a href="https://brocku.ca/coronavirus/faq/#1628185318475-3c71d650-68dc">Brock's campus-wide policy </a></p>
+										<p>For more information visit the Instructional Resource Centre (IRC):  <a href="https://brocku.ca/education/student-resources/irc/ ">https://brocku.ca/education/student-resources/irc/</a></p>	
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<h2><a href="https://brocku.ca/education/student-resources/irc/">Please check our website for library hours.</a></h2>
+									</td>
+								</tr>
+							</table>
+						</xsl:when>
+					<!-- Main Library Letter -->
+					<xsl:otherwise>
+						<table cellspacing="0" cellpadding="5" border="0">
+							<tr>
+								<td>
+									<p>The following books are now ready for pickup at James A. Gibson Library <br />
+									Wearing a mask or face covering is required as per <a href="https://brocku.ca/coronavirus/faq/#1628185318475-3c71d650-68dc">Brock's campus-wide policy </a></p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<h2><a href="https://brocku.ca/library/use/hours/">Please check our website for library hours.</a></h2>
+								</td>
+							</tr>
+						</table>
+						<table cellspacing="2" cellpadding="5" border="2">
+							<tr>
+								<th>Title</th>
+								<th>Author</th>
+							</tr>
+							<xsl:for-each select="notification_data/phys_item_display">
+								<tr>
+									<td><xsl:value-of select="title"/></td>
+									<td><xsl:value-of select="author"/></td>
+								</tr>
+							</xsl:for-each>
+						</table>
+					</xsl:otherwise>
+					</xsl:choose>
+						
+						<!-- END OF AFN TODO -->
+					</xsl:otherwise>
+					</xsl:choose>
+						<!-- END OF AFN CODE -->
+				</div>
+			</div>
                 <!-- AFN footer template options from footer.xsl -->
                 <xsl:call-template name="AFNLastFooter" /> 
                 <xsl:call-template name="AFNAccount" />
@@ -224,7 +223,4 @@ Wearing a mask or face covering is required as per <a href="https://brocku.ca/co
 
 
 </xsl:stylesheet>
-
-
-
 

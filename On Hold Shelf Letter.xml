@@ -181,7 +181,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 						<table cellspacing="0" cellpadding="5" border="0">
 							<tr>
 								<td>
-									<p>The following books are now ready for pickup at James A. Gibson Library <br />
+									<p>@@following_item_requested_on@@ <xsl:value-of select="notification_data/request/create_date"/>, @@can_picked_at@@ <b>@@circulation_desk@@ <xsl:value-of select="notification_data/request/delivery_address"/></b>.<br />
 									Wearing a mask or face covering is required as per <a href="https://brocku.ca/coronavirus/faq/#1628185318475-3c71d650-68dc">Brock's campus-wide policy </a></p>
 								</td>
 							</tr>

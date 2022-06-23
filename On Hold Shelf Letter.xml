@@ -142,80 +142,80 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 						<xsl:otherwise>			
 							<!-- AFN TODO -->
 							<!-- handle local institution on hold (ie. PUT YOUR EXISTING HOLD LETTER INFO HERE between the xsl:otherwise tag)-->
-					<xsl:choose>
-						<xsl:when test="/notification_data/organization_unit/path='01OCUL.01OCUL_BU.HAMILTON'">
-							<table cellspacing="0" cellpadding="5" border="0">
-								<tr>
-									<td>
-										<p>The following items are now ready for pickup at Instructional Resource Center, Hamilton Campus<br />
-										Wearing a mask or face covering is required as per <a href="https://brocku.ca/coronavirus/faq/#1628185318475-3c71d650-68dc">Brock's campus-wide policy </a></p>
-										<p>For more information visit the Instructional Resource Centre (IRC):  <a href="https://brocku.ca/education/student-resources/irc/ ">https://brocku.ca/education/student-resources/irc/</a></p>	
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<h2><a href="https://brocku.ca/education/student-resources/irc/">Please check our website for library hours.</a></h2>
-									</td>
-								</tr>
-							</table>
-						</xsl:when>
-						<!-- IRC ST CATH LETTER -->
-						<xsl:when test="/notification_data/organization_unit/path='01OCUL.01OCUL_BU.IRC'">
-							<table cellspacing="0" cellpadding="5" border="0">
-								<tr>
-									<td>
-										<p>The following items are now ready for pickup at Instructional Resource Centre, St. Catharines Campus<br />
-										Wearing a mask or face covering is required as per <a href="https://brocku.ca/coronavirus/faq/#1628185318475-3c71d650-68dc">Brock's campus-wide policy </a></p>
-										<p>For more information visit the Instructional Resource Centre (IRC):  <a href="https://brocku.ca/education/student-resources/irc/ ">https://brocku.ca/education/student-resources/irc/</a></p>	
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<h2><a href="https://brocku.ca/education/student-resources/irc/">Please check our website for library hours.</a></h2>
-									</td>
-								</tr>
-							</table>
-						</xsl:when>
-					<!-- Main Library Letter -->
-					<xsl:otherwise>
-						<table cellspacing="0" cellpadding="5" border="0">
-							<tr>
-								<td>
-									<p>@@following_item_requested_on@@ <xsl:value-of select="notification_data/request/create_date"/>, @@can_picked_at@@ <b>@@circulation_desk@@ <xsl:value-of select="notification_data/request/delivery_address"/></b>.<br />
-									Wearing a mask or face covering is required as per <a href="https://brocku.ca/coronavirus/faq/#1628185318475-3c71d650-68dc">Brock's campus-wide policy </a></p>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<h2><a href="https://brocku.ca/library/use/hours/">Please check our website for library hours.</a></h2>
-								</td>
-							</tr>
-						</table>
-						<table cellspacing="2" cellpadding="5" border="2">
-							<tr>
-								<th>Title</th>
-								<th>Author</th>
-							</tr>
-							<xsl:for-each select="notification_data/phys_item_display">
-								<tr>
-									<td><xsl:value-of select="title"/></td>
-									<td><xsl:value-of select="author"/></td>
-								</tr>
-							</xsl:for-each>
-						</table>
-					</xsl:otherwise>
-					</xsl:choose>
-						
-						<!-- END OF AFN TODO -->
-					</xsl:otherwise>
-					</xsl:choose>
-						<!-- END OF AFN CODE -->
+							<xsl:choose>
+								<xsl:when test="/notification_data/organization_unit/path='01OCUL.01OCUL_BU.HAMILTON'">
+									<table cellspacing="0" cellpadding="5" border="0">
+										<tr>
+											<td>
+												<p>The following items are now ready for pickup at Instructional Resource Center, Hamilton Campus<br />
+												Wearing a mask or face covering is required as per <a href="https://brocku.ca/coronavirus/faq/#1628185318475-3c71d650-68dc">Brock's campus-wide policy </a></p>
+												<p>For more information visit the Instructional Resource Centre (IRC):  <a href="https://brocku.ca/education/student-resources/irc/ ">https://brocku.ca/education/student-resources/irc/</a></p>	
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<h2><a href="https://brocku.ca/education/student-resources/irc/">Please check our website for library hours.</a></h2>
+											</td>
+										</tr>
+									</table>
+								</xsl:when>
+								<!-- IRC ST CATH LETTER -->
+								<xsl:when test="/notification_data/organization_unit/path='01OCUL.01OCUL_BU.IRC'">
+									<table cellspacing="0" cellpadding="5" border="0">
+										<tr>
+											<td>
+												<p>The following items are now ready for pickup at Instructional Resource Centre, St. Catharines Campus<br />
+												Wearing a mask or face covering is required as per <a href="https://brocku.ca/coronavirus/faq/#1628185318475-3c71d650-68dc">Brock's campus-wide policy </a></p>
+												<p>For more information visit the Instructional Resource Centre (IRC):  <a href="https://brocku.ca/education/student-resources/irc/ ">https://brocku.ca/education/student-resources/irc/</a></p>	
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<h2><a href="https://brocku.ca/education/student-resources/irc/">Please check our website for library hours.</a></h2>
+											</td>
+										</tr>
+									</table>
+								</xsl:when>
+								<!-- Main Library Letter -->
+								<xsl:otherwise>
+									<table cellspacing="0" cellpadding="5" border="0">
+										<tr>
+											<td>
+												<p>@@following_item_requested_on@@ <xsl:value-of select="notification_data/request/create_date"/>, @@can_picked_at@@ <b>@@circulation_desk@@ <xsl:value-of select="notification_data/request/delivery_address"/></b>.<br />
+												Wearing a mask or face covering is required as per <a href="https://brocku.ca/coronavirus/faq/#1628185318475-3c71d650-68dc">Brock's campus-wide policy </a></p>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<h2><a href="https://brocku.ca/library/use/hours/">Please check our website for library hours.</a></h2>
+											</td>
+										</tr>
+									</table>
+									<table cellspacing="2" cellpadding="5" border="2">
+										<tr>
+											<th>Title</th>
+											<th>Author</th>
+										</tr>
+										<xsl:for-each select="notification_data/phys_item_display">
+											<tr>
+												<td><xsl:value-of select="title"/></td>
+												<td><xsl:value-of select="author"/></td>
+											</tr>
+										</xsl:for-each>
+									</table>
+								</xsl:otherwise>
+							</xsl:choose>
+							<!-- END OF AFN TODO -->
+						</xsl:otherwise>
+					</xsl:choose>	
+					<!-- END OF AFN CODE -->									
 				</div>
 			</div>
-                <!-- AFN footer template options from footer.xsl -->
-                <xsl:call-template name="AFNLastFooter" /> 
-                <xsl:call-template name="AFNAccount" />
-
+				<!-- AFN TODO -->
+				<!-- AFN footer template options from footer.xsl -->
+				<xsl:call-template name="AFNLastFooter" /> 
+				<xsl:call-template name="AFNAccount" />
+				<!-- END OF AFN TODO -->
 			</body>
 	</html>
 	</xsl:template>
@@ -223,4 +223,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
 
 </xsl:stylesheet>
+
+
+
 

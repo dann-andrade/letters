@@ -26,9 +26,9 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 		</head>
 
 			<body>
-			<h1>
-				<strong>@@move_to_library@@: </strong><xsl:value-of select="notification_data/destination"/>
-			</h1>
+			<h2>
+                <strong>@@requested_for@@ : </strong><xsl:value-of select="notification_data/user_for_printing/name"/>
+			</h2>
 
 
 				<xsl:call-template name="head" /> <!-- header.xsl -->

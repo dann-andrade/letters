@@ -659,7 +659,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
         <xsl:otherwise>
             <!-- AFN TODO -->
             <!-- your home institution -->
-            NAME OF HOME INSTITUTION
+            Brock University
             <!-- END OF AFN TODO -->
         </xsl:otherwise>
     </xsl:choose>

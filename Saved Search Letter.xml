@@ -113,7 +113,7 @@
 							</td>
 						</tr>
 						<tr>
-							<td style="background-color: #4d6b82; text-align:center; padding: 15px">
+							<td style="background-color: darkred; text-align:center; padding: 15px">
 									<a style="color: #fff">
 										<xsl:attribute name="href">
 											<xsl:value-of select="/notification_data/alert_unsubscribe_link/node()"/>

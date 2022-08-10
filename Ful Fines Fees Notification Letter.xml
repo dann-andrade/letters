@@ -27,16 +27,25 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
 		<table cellspacing="0" cellpadding="5" border="0">
 				<tr>
-				<td>
-					<h>This notice is to inform you that the below amount owing on your library account will be transferred to your Brock student account. 
-This transfer occurs automatically on the 2nd of every month for all fines exceeding &#36;20. </h>
-</td></tr>
-<tr><td>
-<h>Fines can then be paid using a variety of methods. More information: <a href="https://brocku.ca/safa/tuition-and-fees/making-a-payment/">https://brocku.ca/safa/tuition-and-fees/making-a-payment/</a></h>
-</td></tr>
-<tr><td>
-<h>Log in to <a href="https://ocul-bu.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_BU:BU_DEFAULT">your Library Account</a> to view details about fines on your record.</h>
-				</td>
+				    <td>
+                        <h>This notice is to inform you that the below amount owing on your library account will be transferred to your Brock student account. 
+                        This transfer occurs automatically on the 2nd of every month for all fines exceeding &#36;20. </h>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h><b>Refunds or reversals on charges transferred to your Brock student account cannot be applied directly and may take up to 3 weeks to process.</b></h>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h>Fines can then be paid using a variety of methods. More information: <a href="https://brocku.ca/safa/tuition-and-fees/making-a-payment/">https://brocku.ca/safa/tuition-and-fees/making-a-payment/</a></h>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h>Log in to <a href="https://ocul-bu.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_BU:BU_DEFAULT">your Library Account</a> to view details about fines on your record.</h>
+				    </td>
 				</tr>
 				</table>
 
@@ -83,7 +92,7 @@ This transfer occurs automatically on the 2nd of every month for all fines excee
 				<br />
 
 				<xsl:call-template name="lastFooter" /> <!-- footer.xsl -->  
-<xsl:call-template name="myAccount" /> 
+                <xsl:call-template name="myAccount" /> 
 
 			</body>
 	</html>

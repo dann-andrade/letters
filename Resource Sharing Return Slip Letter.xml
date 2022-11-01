@@ -276,5 +276,5 @@
 				<!-- footer.xsl -->
 			</body>
 		</html>
-  </xsl:template>
+	</xsl:template>
 </xsl:stylesheet>

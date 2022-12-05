@@ -244,6 +244,8 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                             <tr>
                                 <td>
                                     <h>@@message@@</h>
+                                    <br />
+								    <b>Note: Libraries close for the holidays on December 23rd at 5pm, reopening on January 3rd</b>
                                 </td>
                             </tr>
 

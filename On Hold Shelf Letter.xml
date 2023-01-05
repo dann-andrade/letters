@@ -148,8 +148,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 										<tr>
 											<td>
 												<p>The following items are now ready for pickup at Instructional Resource Center, Hamilton Campus<br />
-												Wearing a mask or face covering is required as per <a href="https://brocku.ca/coronavirus/faq/#1628185318475-3c71d650-68dc">Brock's campus-wide policy </a><br />
-												<b>Note: Libraries close for the holidays on December 23rd at 5pm, reopening on January 3rd</b></p>
+												Wearing a mask or face covering is required as per <a href="https://brocku.ca/coronavirus/faq/#1628185318475-3c71d650-68dc">Brock's campus-wide policy </a><br/></p>												
 											</td>
 										</tr>
 										<tr>
@@ -165,8 +164,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 										<tr>
 											<td>
 												<p>The following items are now ready for pickup at Instructional Resource Centre, St. Catharines Campus<br />
-												Wearing a mask or face covering is required as per <a href="https://brocku.ca/coronavirus/faq/#1628185318475-3c71d650-68dc">Brock's campus-wide policy </a><br />
-												<b>Note: Libraries close for the holidays on December 23rd at 5pm, reopening on January 3rd</b></p>
+												Wearing a mask or face covering is required as per <a href="https://brocku.ca/coronavirus/faq/#1628185318475-3c71d650-68dc">Brock's campus-wide policy </a><br /></p>												
 											</td>
 										</tr>
 										<tr>
@@ -181,8 +179,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 									<table cellspacing="0" cellpadding="5" border="0">
 										<tr>
 											<td>
-												<p>@@following_item_requested_on@@ <xsl:value-of select="notification_data/request/create_date"/>, @@can_picked_at@@ <b>@@circulation_desk@@ <xsl:value-of select="notification_data/request/delivery_address"/></b>.<br />
-												<b>Note: Libraries close for the holidays on December 23rd at 5pm, reopening on January 3rd</b></p>
+												<p>@@following_item_requested_on@@ <xsl:value-of select="notification_data/request/create_date"/>, @@can_picked_at@@ <b>@@circulation_desk@@ <xsl:value-of select="notification_data/request/delivery_address"/></b>.<br /></p>
 											</td>
 										</tr>
 										<tr>

@@ -68,8 +68,6 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
           	</table>
           </div>
         </div>
-        <xsl:call-template name="lastFooter" />
-        <!-- footer.xsl -->
         <div>
         <p>The linked/ attached material being provided to you by Brock University was made pursuant to the University’s Fair Dealing Policy and/or a licence granted by the copyright owner.</p>
 
@@ -77,6 +75,8 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
         <p>You are responsible for ensuring any use beyond these uses is permissible under copyright law. Failure to comply with these conditions may constitute copyright infringement under Canadian laws, and/or violation of the terms of relevant licensing agreements.</p>
         </div>
+        <xsl:call-template name="lastFooter" />
+        <!-- footer.xsl -->
       </body>
     </html>
   </xsl:template>

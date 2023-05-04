@@ -179,7 +179,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 									<table cellspacing="0" cellpadding="5" border="0">
 										<tr>
 											<td>
-												<p>@@following_item_requested_on@@ <xsl:value-of select="notification_data/request/create_date"/>, @@can_picked_at@@ <b>@@circulation_desk@@ <xsl:value-of select="notification_data/request/delivery_address"/></b>.<br /></p>
+												<p>@@following_item_requested_on@@ <xsl:value-of select="notification_data/request/create_date"/>, @@can_picked_at@@ <b>@@circulation_desk@@ <xsl:value-of select="notification_data/request/delivery_address"/></b> until <b><xsl:value-of select="notification_data/request/work_flow_entity/expiration_date"/></b> <br /></p>
 											</td>
 										</tr>
 										<tr>

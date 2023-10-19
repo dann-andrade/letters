@@ -127,11 +127,14 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
           </div>
         </div>
         <div>
-        <p>The linked/ attached material being provided to you by Brock University was made pursuant to the University’s Fair Dealing Policy and/or a licence granted by the copyright owner.</p>
-
-        <p>The item may only be used for the purpose of research, private study, criticism, review, news reporting, education, satire, or parody. If the copy is used for the purpose of review, criticism, or news reporting, the source and name of the authority must be mention. The use of this item for any other purpose may require the consent of the copyright owner.</p>
-
-        <p>You are responsible for ensuring any use beyond these uses is permissible under copyright law. Failure to comply with these conditions may constitute copyright infringement under Canadian laws, and/or violation of the terms of relevant licensing agreements.</p>
+        <p>BROCK UNIVERSITY INTERLIBRARY LOAN OR LOCAL DOCUMENT DELIVERY REQUEST</p>
+        <p>The copyright material being provided to you by Brock University was made pursuant to the University’s <a href="https://brocku.ca/policies/wp-content/uploads/sites/94/Fair-Dealing-Policy.pdf">Fair Dealing Policy</a> and/or a licence granted by the copyright owner.</p>
+        <p>
+          The item may only be used for the purpose of research, private study, criticism, review, news reporting, education, satire, or parody. 
+          If the copy is used for the purpose of review, criticism, or news reporting, the source and name of the authority must be mentioned. 
+          The use of this item for any other purpose may require the consent of the copyright owner.
+          You are responsible for ensuring any use beyond these uses is permissible under copyright law.
+        </p>
         </div>
         <xsl:call-template name="lastFooter" />
         <!-- footer.xsl -->
